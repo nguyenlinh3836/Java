@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lab1;
+package Sol1;
 
 /**
  *
@@ -11,31 +11,37 @@ package lab1;
  */
 public class Circle {
     private double radius;
-    private String color ;
+    private String color;
     
     public Circle(){
-        radius = 1.0;
+        radius = 1.0 ;
         color = "red";        
     }
-    public Circle (double r){
-        radius = r ;
-        color ="red";      
-        
-    }
-    public Circle(double r, String c){
+    public Circle(double r){
         radius = r;
-        color = c;
-        
-    }
-    /// public method
+        color = "red";        
+    }  
+    
     public double getRadius(){
         return radius;
     }
+    public void setRadius(double radius){
+        this.radius = radius;
+    }
+    public void setColor(String color){
+        this.color = color;
+    }    
     public String getColor(){
         return color;
     }
     public double getArea(){
         return radius*radius* Math.PI;
     }  
- 
+    @Override
+    public String toString() {
+        return "Circle{" + "radius=" + radius + ", color=" + color + '}';
+    }
+    
+    
+    
 }

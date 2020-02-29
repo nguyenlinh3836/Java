@@ -3,49 +3,44 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lab2;
+package Sol1;
 
 /**
  *
  * @author Nguyen Hoang Linh
  */
-public class Rectangle {
-    private int height;
-    private int width;
-    
-    public Rectangle(){
-        height = 7;
-        width = 3;
-    }        
-    public Rectangle(int height , int width){
-        this.height = height;
-        this.width = width;
+public class Rectangle {    
+    private float length;
+    private float width;    
+    public Rectangle(){                
     }
-    public void display() {       
-        for(int i = 0; i <width; i++) {
-            for(int j = 0; j <height; j++) {
-                System.out.print("#");
-            }
-            System.out.println("");
-        }        
+    public Rectangle(float a, float b){
+        length = a;
+        width = b;
     }
-    public int getArea(){
-        return width * height;
+ 
+    public float getLength(){
+        return length;
     }
-    public int getPerimeter(){
-        return (width + height) * 2;
+    public void setLength(float length){
+        this.length = length;
     }
-    public int getHeight(){
-        return height;
-    }
-    public int getWidth(){
+    public float getWidth(){
         return width;
     }
-    public void setHeight(int valueHeight){
-        this.height = valueHeight;
+    public void setWidth(float width){
+        this.width = width;
     }
-    public void setWidth(int valueWidth){
-        this.width = valueWidth;
+    public double getArea(){
+        return length* width;
     }
+    public double getPerimeter(){
+        return (width +  length)*2;
+    }      
+
+    @Override
+    public String toString() {
+        return "Retangle{" + "length=" + length + ", width=" + width + '}';
+    }  
     
 }

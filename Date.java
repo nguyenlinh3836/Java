@@ -36,16 +36,30 @@ public void setMonth(int month){
     public void setyear(int year){
 	this.year=year;
 }
-public void setDate(int day, int month, int year){
-	this.day=day;
-	this.month = month;
-	this.year=year;
-}
-
-	@Override
-	public String toString() {
-		return "Date{" + day + "/" + month + "/" + year + '}';
+public void setDate(int day, int month, int year){	
+	if(day <30){
+		this.day=day;
+	} else{
+		System.out.println("Value not Allow");
 	}
+	if(month <= 12){
+		this.month = month;
+	}else {
+		System.out.println("Value not Allow ");
+	}
+	if(year >= 1900 & year <= 1999){
+		this.year=year;
+	}else {
+		System.out.println("Value not Allow");
+	}
+}	
+public String toString() {
+        // Use built-in function String.format() to form a formatted String
+        return String.format("%02d/%02d/%4d", month, day, year);
+              // Specifier "0" to print leading zeros
+   }
+
+	
 
     
     

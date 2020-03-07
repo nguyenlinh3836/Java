@@ -3,32 +3,37 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Sol1;
+package JP08;
 
 /**
  *
  * @author Nguyen Hoang Linh
  */
-public class Rectangle {    
-    private float length;
-    private float width;    
+public class Rectangle extends Shape {
+	private double length;
+    private double width;    
     public Rectangle(){                
     }
-    public Rectangle(float a, float b){
-        length = a;
-        width = b;
+    public Rectangle(double width, double length){
+        this.length = length;
+        this.width = width;
     }
+	public Rectangle(double width, double length, String color , boolean filled){
+		super(color,filled);
+		this.length = length;
+        this.width = width;
+	}
  
-    public float getLength(){
+    public double getLength(){
         return length;
     }
-    public void setLength(float length){
+    public void setLength(double length){
         this.length = length;
     }
-    public float getWidth(){
+    public double getWidth(){
         return width;
     }
-    public void setWidth(float width){
+    public void setWidth(double width){
         this.width = width;
     }
     public double getArea(){
@@ -38,9 +43,9 @@ public class Rectangle {
         return (width +  length)*2;
     }      
 
-    @Override
-    public String toString() {
-        return "Retangle{" + "length=" + length + ", width=" + width + '}';
-    }  
-    
+	@Override
+	public String toString() {
+		return "Rectangle{" + "length=" + length + ", width=" + width + '}';
+	}
+	
 }

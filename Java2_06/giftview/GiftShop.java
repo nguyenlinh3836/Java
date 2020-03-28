@@ -9,7 +9,8 @@ public class GiftShop {
         GiftController g1 = new GiftController();
         int input;
         do {
-            System.out.print("Gift Shop: \n" +
+            System.out.println("=============Gift Shop============");
+            System.out.print(
                     "1. print all book.\n" +
                     "2. insert book.\n" +
                     "3. delete book.\n" +

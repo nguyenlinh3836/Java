@@ -19,7 +19,7 @@ public class GiftController {
                 Statement stmt = conn.createStatement();
         ) {
             int id;
-            System.out.println("Please input id to delete:");
+            System.out.println("Please input ID to delete:");
             id = in.nextInt();
             gift.setId(id);
             String s = String.valueOf(gift.getID());
@@ -43,8 +43,8 @@ public class GiftController {
             int id = in.nextInt();
             gift.setId(id);
             String s1 = String.valueOf(gift.getID());
-            System.out.println("Please input name");
-            String name = in.nextLine();
+            System.out.println("Please input name:");
+            String name = in.next();
             gift.setName(name);
             String s2 = gift.getName();
             System.out.println("PLease input Price");
@@ -55,8 +55,8 @@ public class GiftController {
             int qty = in.nextInt();
             gift.setQty(qty);
             String s4 = String.valueOf(gift.getQty());
-            String sqlInsert = "insert into gift values ( " + s1 + "," + "'" + s2 + "'," + "," + s3 + "," + s4 + ")";
-            System.out.println("The SQL statement is: " + sqlInsert + "\n");  // Echo for debugging
+            String sqlInsert = "insert into gift values ( " + s1 + "," + "'" + s2 + "'" + "," + s3 + "," + s4 + ")";
+            System.out.println("The SQL statement is: " + sqlInsert + "\n");
             int countInserted = stmt.executeUpdate(sqlInsert);
             System.out.println(countInserted + " records inserted.\n");
         } catch (SQLException ex) {
@@ -70,16 +70,17 @@ public class GiftController {
                         "root", "");
                 Statement stmt = conn.createStatement();
         ) {
-            String strSelect = "select name, price, qty from gift";
+            String strSelect = "select id,name, price, qty from gift";
             System.out.println("The SQL statement is: " + strSelect + "\n");
             ResultSet rset = stmt.executeQuery(strSelect);
             System.out.println("The records selected are:");
             int rowCount = 0;
             while(rset.next()) {
+                int    id = rset.getInt("id");
                 String name = rset.getString("name");
                 double price = rset.getDouble("price");
                 int    qty   = rset.getInt("qty");
-                System.out.println(name + ", " + price + ", " + qty);
+                System.out.println(id + ", " + name + ", " + price + ", " + qty);
                 ++rowCount;
             }
             System.out.println("Total number of records = " + rowCount);
